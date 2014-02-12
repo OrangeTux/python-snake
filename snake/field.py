@@ -6,11 +6,11 @@ class Field:
     :param height:  The height of the field.
 
     """
-    def __init__(self, length=10, height=10):
-        self.length = 10
+    def __init__(self, width=10, height=10):
+        self.width = 10
         self.height = 10
 
-        self.field = create_field()
+        self.field = self.create_field()
 
     def create_field(self):
         """ Creates a field based on the dimensions.
@@ -18,7 +18,7 @@ class Field:
         :return:    Dict filled with (x, y) tuples as keys.
 
         """
-        return {(x, y): None for x in range(self.length)
+        return {(x, y): None for x in range(self.width)
                 for y in range(self.width)}
 
     def set_cell_content(self, x, y, content):
