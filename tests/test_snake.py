@@ -43,6 +43,7 @@ def test_move_with_grow(snake):
     # The tail is not on same location.
     assert old_segments.pop() in snake.segments
 
+
 def test_move_without_grow(snake):
     """ Test if snake moves correctly. """
     old_segments = copy(snake.segments)
