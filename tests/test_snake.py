@@ -34,7 +34,7 @@ def test_move_with_grow(snake):
     old_segments = copy(snake.segments)
     snake.move(0, 3, grow=True)
 
-    # Snake hasn't grew, so body is same size.
+    # Snake grew, so body is same size.
     assert len(snake.segments) is len(old_segments) + 1
     # Head is now placed on te new location.
     assert snake.segments[0] == (0, 3)
