@@ -1,4 +1,5 @@
 from random import randint
+from time import sleep
 
 from snake.exceptions import SnakeIsDeadError
 
@@ -86,7 +87,7 @@ class App():
         self.spawn_food()
 
     def run(self):
-        for i in range(5):
-            print(self.snake.get_location_head())
+        """ Start Snake. """
+        while True:
             self.move()
-            import time; time.sleep(1)
+            sleep(1)
