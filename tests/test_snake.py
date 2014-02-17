@@ -4,8 +4,8 @@ from copy import copy
 
 def test_amount_of_segments():
     """ Test amount of segments of snake. """
-    s = Snake(size=3)
-    assert len(s.segments) is 3
+    sn = Snake(size=3)
+    assert len(sn.segments) is 3
 
 
 def test_move_head(snake):
@@ -16,7 +16,7 @@ def test_move_head(snake):
 
     snake.move_head(x, y)
     assert len(snake.segments) is len(old_segments) + 1
-    assert snake.segments[0] == (x, y)
+    assert snake.get_location_head() == (x, y)
 
 
 def test_move_tail(snake):
@@ -37,7 +37,7 @@ def test_move_with_grow(snake):
     # Snake grew, so body is same size.
     assert len(snake.segments) is len(old_segments) + 1
     # Head is now placed on te new location.
-    assert snake.segments[0] == (0, 3)
+    assert snake.get_location_head() == (0, 3)
     # Previous head is now second segment.
     assert old_segments[0] is snake.segments[1]
     # The tail is not on same location.
@@ -52,8 +52,16 @@ def test_move_without_grow(snake):
     # Snake hasn't grew, so body is same size.
     assert len(snake.segments) is len(old_segments)
     # Head is now placed on te new location.
-    assert snake.segments[0] == (0, 3)
+    assert snake.get_location_head() == (0, 3)
     # Previous head is now second segment.
     assert old_segments[0] is snake.segments[1]
     # The tail is not on same location.
     assert old_segments.pop() not in snake.segments
+
+
+def test_get_location_head(snake):
+    assert snake.get_location_head() == (0, 2)
+
+
+def test_get_location_tail(snake):
+    assert snake.get_location_tail() == (0, 0)
