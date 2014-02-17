@@ -46,7 +46,7 @@ class Snake:
         :param grow:    If snake has to grow or not.
 
         """
-        if not grow and len(self.segments) > 1:
+        if not grow:
             self.move_tail()
 
         self.move_head(x, y)

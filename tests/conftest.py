@@ -1,3 +1,4 @@
+from snake import App
 from snake.field import Field
 from snake.snake import Snake
 
@@ -12,3 +13,8 @@ def field():
 @pytest.fixture
 def snake():
     return Snake()
+
+
+@pytest.fixture
+def app(snake, field):
+    return App(field, snake)
