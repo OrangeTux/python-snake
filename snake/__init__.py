@@ -84,3 +84,9 @@ class App():
         self.field.set_cell_content(x, y, SNAKE)
         self.snake.move(x, y, grow=grow)
         self.spawn_food()
+
+    def run(self):
+        for i in range(5):
+            print(self.snake.get_location_head())
+            self.move()
+            import time; time.sleep(1)
