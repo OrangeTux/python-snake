@@ -11,7 +11,7 @@ def test_spawn_food(app):
 def test_spawn_snake(app):
     location = app.spawn_snake()
     assert app.field.get_cell_content(location[0], location[1]) == app.SNAKE
-    assert app.snake.get_head() == location
+    assert app.snake.get_location_head() == location
 
 
 def calculate_location_snake_head(app):

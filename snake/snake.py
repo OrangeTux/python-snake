@@ -6,8 +6,24 @@ class Snake:
     """
     def __init__(self, size=3):
         self.segments = list()
-        for y in range(size):
+        for y in range(size - 1, -1, -1):
             self.segments.append((0, y))
+
+    def get_location_head(self):
+        """ Return the location of the head as a tuple.
+
+        :return:    Tuple with x and y coordinate.
+
+        """
+        return self.segments[0]
+
+    def get_location_tail(self):
+        """ Return the location of the tail as a tuple.
+
+        :return:    Tuple with x and y coordinate.
+
+        """
+        return self.segments[len(self.segments) - 1]
 
     def move_head(self, x, y):
         """ Move head to the snake to location.
@@ -30,7 +46,7 @@ class Snake:
         :param grow:    If snake has to grow or not.
 
         """
-        if not grow:
+        if not grow and len(self.segments) > 1:
             self.move_tail()
 
         self.move_head(x, y)
