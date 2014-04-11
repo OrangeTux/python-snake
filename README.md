@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/OrangeTux/python-snake.svg?branch=develop)](https://travis-ci.org/OrangeTux/python-snake)
+
 # Snake
 A minimal implementation of Snake in Python.
 
