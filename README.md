@@ -15,10 +15,10 @@ Create a virtualenv and install the requirements
 ## Python 3.3
     
     $ pyvenv-3.3 .env
-    $ source .env/bin/activat
+    $ source .env/bin/activate
     $ wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py
     $ python get-pip.py
-    # I've to reactivate the virtualen environment
+    # I need to reactivate the virtualenv
     $ deactivate
     $ source .env/bin/activate
     $ pip install -r requirements.txt
